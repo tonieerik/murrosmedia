@@ -7,7 +7,6 @@ import "@/styles/template.css";
 const Template = ({ children }: { children: React.ReactNode }) => (
   <>
     <Header />
-    <Menu />
     {children}
     <Footer />
   </>

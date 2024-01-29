@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Menu = () => {
+const Menu = ({ currentPage }: { currentPage: string }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  const isCurrentPage = (page: string) => {
+    return currentPage === page ? "underline" : "no-underline";
+  };
 
   return (
     <>
@@ -90,28 +94,30 @@ const Menu = () => {
           <div className="flex flex-wrap items-center justify-evenly max-w-4xl mx-auto">
             <nav className={`block flex items-center w-auto h-32`}>
               <Link
-                className="lg:block text-gray-100 text-xl lg:text-2xl no-underline md:inline-block md:mt-0 px-4"
+                className={`lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 no-underline`}
                 key="mitä teen"
                 href="/#mita-teen"
               >
                 MITEN VOIN AUTTAA?
               </Link>
               <Link
-                className="lg:block text-gray-100 text-xl lg:text-2xl no-underline md:inline-block md:mt-0 px-4"
+                className={`lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 no-underline`}
                 key="kuka olen"
                 href="/#kuka-olen"
               >
                 TUTUSTUTAAN!
               </Link>
               <Link
-                className="lg:block text-gray-100 text-xl lg:text-2xl no-underline md:inline-block md:mt-0 px-4"
+                className={`lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 ${isCurrentPage(
+                  "portfolio"
+                )}`}
                 key="portfolio"
-                href="/#portfolio"
+                href="/portfolio"
               >
                 PORTFOLIO
               </Link>
               <Link
-                className="lg:block text-gray-100 text-xl lg:text-2xl no-underline md:inline-block md:mt-0 px-4"
+                className={`lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 no-underline`}
                 key="yhdeydenotto"
                 href="/#yhteydenotto"
               >

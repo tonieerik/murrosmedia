@@ -1,10 +1,13 @@
+import { Metadata } from "next";
+import Image from "next/image";
 import Contact from "@/components/contact";
 import Intro from "@/components/intro";
 import Quotation from "@/components/quotation";
 import Services from "@/components/services";
 import Testimonials from "@/components/testimonials";
-import { Metadata } from "next";
-import Image from "next/image";
+import { Testimonial } from "@/interfaces/testimonial";
+import { client } from "@/utils/sanity";
+import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
   title: "Mandariinimedia",
@@ -20,22 +23,29 @@ const quotation2 = [
   "Luottamus taas vahvistaa potentiaalisen asiakkaan halua ostaa juuri sinulta.",
 ];
 
-const Page = () => (
-  <>
-    <Intro />
-    <Quotation content={quotation1} />
-    <Services />
-    <Image
-      className="mt-0"
-      alt="Sisällöntuottaja Jyväskylästä"
-      src="/sisallontuottaja-jyvaskyla.jpg"
-      width="2000"
-      height="1334"
-    />
-    <Testimonials />
-    <Quotation content={quotation2} />
-    <Contact />
-  </>
-);
+const Page = async () => {
+  const testimonials = await client.fetch<Testimonial[]>(
+    `*[_type == "testimonial"]`
+  );
+
+  return (
+    <>
+      <Menu currentPage="" />
+      <Intro />
+      <Quotation content={quotation1} />
+      <Services />
+      <Image
+        className="mt-0"
+        alt="Sisällöntuottaja Jyväskylästä"
+        src="/sisallontuottaja-jyvaskyla.jpg"
+        width="2000"
+        height="1334"
+      />
+      <Testimonials testimonials={testimonials} />
+      <Quotation content={quotation2} />
+      <Contact />
+    </>
+  );
+};
 
 export default Page;
