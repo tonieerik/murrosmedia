@@ -8,6 +8,7 @@ import Testimonials from "@/components/testimonials";
 import { Testimonial } from "@/interfaces/testimonial";
 import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
+import Collaboration from "@/components/collaboration";
 
 export const metadata: Metadata = {
   title: "Mandariinimedia",
@@ -41,6 +42,7 @@ const Page = async () => {
         width="2000"
         height="1334"
       />
+      <Collaboration />
       <Testimonials testimonials={testimonials} />
       <Quotation content={quotation2} />
       <Contact />

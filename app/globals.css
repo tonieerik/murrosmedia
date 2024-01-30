@@ -63,7 +63,7 @@ div {
 }
 li {
   list-style-type: disc;
-  line-height: 12px;
+  line-height: 20px;
 }
 li.slide {
   list-style-type: none;
