@@ -5,6 +5,7 @@ import Intro from "@/components/intro";
 import Quotation from "@/components/quotation";
 import Services from "@/components/services";
 import Testimonials from "@/components/testimonials";
+import { Page } from "@/interfaces/page";
 import { Testimonial } from "@/interfaces/testimonial";
 import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
@@ -28,12 +29,21 @@ const Page = async () => {
   const testimonials = await client.fetch<Testimonial[]>(
     `*[_type == "testimonial"]`
   );
+  const quote1 = await client.fetch<Page[]>(
+    `*[_type == "page" && pageKey == "quote1"]`
+  );
+  const quote2 = await client.fetch<Page[]>(
+    `*[_type == "page" && pageKey == "quote2"]`
+  );
+  const contactContent = await client.fetch<Page[]>(
+    `*[_type == "page" && pageKey == "contact"]`
+  );
 
   return (
     <>
       <Menu currentPage="" />
       <Intro />
-      <Quotation content={quotation1} />
+      <Quotation content={quote1[0].content} />
       <Services />
       <Image
         className="mt-0"
@@ -44,8 +54,8 @@ const Page = async () => {
       />
       <Collaboration />
       <Testimonials testimonials={testimonials} />
-      <Quotation content={quotation2} />
-      <Contact />
+      <Quotation content={quote2[0].content} />
+      <Contact content={contactContent[0].content} />
     </>
   );
 };

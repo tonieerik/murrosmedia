@@ -15,15 +15,3 @@ export const client = createClient({
 const builder = imageUrlBuilder(client);
 
 export const urlFor = (source: any) => builder.image(source).url();
-
-// export const getImageUrl = (source: any) => {
-//   console.log(source);
-//   return (
-//     "https://cdn.sanity.io/images/" +
-//     projectId +
-//     "/" +
-//     dataset +
-//     "/" +
-//     source.asset._ref
-//   );
-// };

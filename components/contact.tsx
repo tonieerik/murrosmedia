@@ -1,11 +1,13 @@
 "use client";
 
+import { PortableText } from "@portabletext/react";
+import { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PulseLoader from "react-spinners/PulseLoader";
 
-const Content = () => {
+const Content = ({ content }: { content: PortableTextBlock }) => {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -37,41 +39,33 @@ const Content = () => {
       });
   };
 
+  const portableTextComponents = {
+    marks: {
+      link: ({ children, value }: { children: any; value?: any }) => {
+        const rel = !value.href.startsWith("/")
+          ? "noreferrer noopener"
+          : undefined;
+        const target = !value.href.startsWith("/") ? "_blank" : undefined;
+
+        return (
+          <a
+            className="font-bold text-orange hover:underline"
+            href={value.href}
+            target={target}
+            rel={rel}
+          >
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
     <div className="bg-white w-full px-8 py-8 md:px-24 md:py-16">
       <div className="flex">
         <div className="w-full md:w-2/3">
-          <div className="py-8 pt-0">
-            Toivottavasti pääsen puhaltamaan henkiin sinunkin tarinasi –
-            mahdollisimman aitona ja uniikkina. Sormeni odottavat jo
-            malttamattomina näppäimistöllä. Rupatellaan ihmeessä lisää, miten
-            voin olla sinulle avuksi. Voit myös pyytää suoraan tarjousta.
-          </div>
-          <div className="py-8 pt-0">
-            Laita vaikka saman tien sähköpostia tai pirauta puhelimitse. Tutustu
-            myös somekanaviini{" "}
-            <a
-              href="https://www.instagram.com/mandariinimedia"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-orange hover:underline"
-            >
-              Instagramissa
-            </a>{" "}
-            ja{" "}
-            <a
-              href="https://www.linkedin.com/in/leppanen-nelli"
-              target="_blank"
-              rel="noreferrer"
-              className="font-bold text-orange hover:underline"
-            >
-              LinkedInissä
-            </a>
-            . Jaan somessa kaikenmoisia ajatuksia kirjoittamisesta ja
-            viestinnästä, kielenkäytön merkityksellisyydestä sekä yrittäjyyden
-            iloista.
-          </div>
-          <div className="py-8 pt-0">Kuullaan pian!</div>
+          <PortableText value={content} components={portableTextComponents} />
           <hr className="mt-4 mb-10 ml-2 mr-8" />
           <form className="block">
             <div className="w-full sm:flex">
@@ -151,27 +145,39 @@ const Content = () => {
   );
 };
 
-const Mobile = ({ className }: { className: string }) => (
+const Mobile = ({
+  className,
+  content,
+}: {
+  className: string;
+  content: PortableTextBlock;
+}) => (
   <div className={className}>
     <div className="w-1/12">&nbsp;</div>
-    <Content />
+    <Content content={content} />
   </div>
 );
 
-const Desktop = ({ className }: { className: string }) => (
+const Desktop = ({
+  className,
+  content,
+}: {
+  className: string;
+  content: PortableTextBlock;
+}) => (
   <div className={className}>
     <div className="self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/6">
       OTAHAN YHTEYTTÄ
     </div>
-    <Content />
+    <Content content={content} />
   </div>
 );
 
-const Contact = () => {
+const Contact = ({ content }: { content: any }) => {
   return (
     <section className="bg-orange flex mx-0" id="yhteydenotto">
-      <Mobile className="md:hidden" />
-      <Desktop className="hidden md:flex" />
+      <Mobile className="md:hidden" content={content} />
+      <Desktop className="hidden md:flex" content={content} />
     </section>
   );
 };

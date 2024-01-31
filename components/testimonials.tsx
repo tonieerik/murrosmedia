@@ -68,7 +68,7 @@ const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => {
             <p className="font-semibold">
               {x.name}
               <br />
-              {x.title}
+              {x.title}, {x.company}
             </p>
           </div>
         ))}
