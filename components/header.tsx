@@ -1,5 +1,3 @@
-import React from "react";
-
 const nameText = "NELLI LEPPÄNEN";
 const headerText = (
   <>
