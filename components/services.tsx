@@ -95,7 +95,6 @@ const Content = () => {
 
 const Mobile = ({ className }: { className: string }) => (
   <div className={className}>
-    <div className="w-1/12">&nbsp;</div>
     <Content />
   </div>
 );

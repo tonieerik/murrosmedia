@@ -8,6 +8,12 @@ div {
   font-family: "Titillium web", sans-serif;
 }
 
+h2 {
+  font-size: 22.5px;
+  color: #0b9995;
+  margin-bottom: 7px;
+}
+
 .bg-orange {
   background-color: #ff9d5c;
 }
@@ -73,6 +79,9 @@ ul.multiline li {
 }
 .carousel .slider {
   width: 80vw !important;
+}
+i.quotation p {
+  margin-bottom: 0;
 }
 
 .select-menu {

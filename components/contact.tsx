@@ -132,7 +132,7 @@ const Content = ({ content }: { content: PortableTextBlock }) => {
             </div>
           </form>
         </div>
-        <div className="w-1/3 ml-8 xs:max-sm:hidden">
+        <div className="w-1/3 ml-8 xs:max-md:hidden">
           <Image
             src="/nelli-sisallontuottaja-puhallus.jpg"
             alt="Sisällöntuottaja Nelli"
@@ -153,7 +153,6 @@ const Mobile = ({
   content: PortableTextBlock;
 }) => (
   <div className={className}>
-    <div className="w-1/12">&nbsp;</div>
     <Content content={content} />
   </div>
 );
