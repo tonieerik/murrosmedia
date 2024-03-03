@@ -1,5 +1,6 @@
 "use client";
 
+import { urlFor } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
 import Image from "next/image";
@@ -7,7 +8,15 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PulseLoader from "react-spinners/PulseLoader";
 
-const Content = ({ content }: { content: PortableTextBlock }) => {
+const Content = ({
+  content,
+  image,
+  imageAlt,
+}: {
+  content: PortableTextBlock;
+  image?: any;
+  imageAlt?: string;
+}) => {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -134,8 +143,8 @@ const Content = ({ content }: { content: PortableTextBlock }) => {
         </div>
         <div className="w-1/3 ml-8 xs:max-md:hidden">
           <Image
-            src="/nelli-sisallontuottaja-puhallus.jpg"
-            alt="Sisällöntuottaja Nelli"
+            src={urlFor(image)}
+            alt={imageAlt || ""}
             width={1334}
             height={2000}
           />
@@ -145,38 +154,25 @@ const Content = ({ content }: { content: PortableTextBlock }) => {
   );
 };
 
-const Mobile = ({
-  className,
+const Contact = ({
+  title,
   content,
+  image,
+  imageAlt,
 }: {
-  className: string;
-  content: PortableTextBlock;
-}) => (
-  <div className={className}>
-    <Content content={content} />
-  </div>
-);
-
-const Desktop = ({
-  className,
-  content,
-}: {
-  className: string;
-  content: PortableTextBlock;
-}) => (
-  <div className={className}>
-    <div className="self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/6">
-      OTAHAN YHTEYTTÄ
-    </div>
-    <Content content={content} />
-  </div>
-);
-
-const Contact = ({ content }: { content: any }) => {
+  title: string;
+  content: any;
+  image?: any;
+  imageAlt?: string;
+}) => {
   return (
     <section className="bg-orange flex mx-0" id="yhteydenotto">
-      <Mobile className="md:hidden" content={content} />
-      <Desktop className="hidden md:flex" content={content} />
+      <div className="flex">
+        <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/6">
+          {title.toUpperCase()}
+        </div>
+        <Content content={content} image={image} imageAlt={imageAlt} />
+      </div>
     </section>
   );
 };

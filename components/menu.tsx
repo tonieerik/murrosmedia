@@ -5,17 +5,25 @@ import Link from "next/link";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import Header from "@/components/header";
+import HeaderSubPage from "./headerSubPage";
 
-const Menu = ({ currentPage }: { currentPage: string }) => {
+const Menu = ({
+  currentPage,
+  headerText,
+}: {
+  currentPage: string;
+  headerText?: string;
+}) => {
   const [isServicesMenuVisible, setIsServicesMenuVisible] = useState(false);
   const [isAboutMenuVisible, setIsAboutMenuVisible] = useState(false);
 
-  const isCurrentPage = (page: string) => {
-    return currentPage === page ? "underline" : "no-underline";
-  };
+  const isCurrentPage = (page: string) =>
+    currentPage === page ? "underline" : "no-underline";
 
   return (
     <>
+      {headerText ? <HeaderSubPage headerText={headerText} /> : <Header />}
       <div className="md:hidden">
         <header className="w-full h-16 bg-orange drop-shadow-lg">
           <Image
@@ -32,13 +40,26 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
               <span className="hamburger"></span>
             </span>
             <ul className="w-3/4">
+              <li>
+                <Link
+                  className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4"
+                  key="etusivu"
+                  href="/"
+                >
+                  ETUSIVU{" "}
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="icon align-middle -rotate-90 w-3"
+                  />
+                </Link>
+              </li>
               <li className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4">
                 MITEN VOIN AUTTAA?
               </li>
               <li>
                 <Link
                   className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 pl-8"
-                  key="mitä teen"
+                  key="vastuullinen-sisallontuotanto"
                   href="/vastuullinen-sisallontuotanto"
                 >
                   Vastuullinen sisällöntuotanto{" "}
@@ -51,7 +72,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
               <li>
                 <Link
                   className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 pl-8"
-                  key="mitä teen"
+                  key="viestinnan-palvelut"
                   href="/viestinnan-palvelut"
                 >
                   Muut viestinnän palvelut{" "}
@@ -70,8 +91,8 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
               <li>
                 <Link
                   className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 pl-8"
-                  key="mitä teen"
-                  href="/sananen-minusta"
+                  key="sananen-minusta"
+                  href="/minusta"
                 >
                   Sananen minusta{" "}
                   <FontAwesomeIcon
@@ -83,7 +104,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
               <li>
                 <Link
                   className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4 pl-8"
-                  key="mitä teen"
+                  key="vasuullisuus"
                   href="/vastuullisuus"
                 >
                   Vastuullisuudesta{" "}
@@ -97,7 +118,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                 <Link
                   className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block md:mt-0 px-4"
                   key="portfolio"
-                  href="/#portfolio"
+                  href="/portfolio"
                 >
                   PORTFOLIO{" "}
                   <FontAwesomeIcon
@@ -112,7 +133,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                   key="yhdeydenotto"
                   href="/#yhteydenotto"
                 >
-                  OTAHAN YHTEYTTÄ{" "}
+                  OTA YHTEYTTÄ{" "}
                   <FontAwesomeIcon
                     icon={faChevronDown}
                     className="icon align-middle -rotate-90 w-3"
@@ -127,6 +148,15 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
         <header className="bg-orange">
           <div className="flex flex-wrap items-center justify-evenly max-w-4xl mx-auto">
             <nav className={`block flex items-center w-auto h-32`}>
+              <Link
+                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 ${isCurrentPage(
+                  ""
+                )}`}
+                key="etusivu"
+                href="/"
+              >
+                ETUSIVU
+              </Link>
               <div
                 className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline select-menu ${
                   isServicesMenuVisible ? "active" : ""
@@ -136,7 +166,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                 }}
               >
                 <div className="text-gray-100">
-                  <span className="sBtn-text cursor-pointer">
+                  <span className="cursor-pointer whitespace-nowrap">
                     MITEN VOIN AUTTAA?{" "}
                     <FontAwesomeIcon
                       icon={faChevronDown}
@@ -144,21 +174,28 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                         isServicesMenuVisible ? "rotate-180" : ""
                       }`}
                     />
+                    <i className="bx bx-chevron-down"></i>
                   </span>
-                  <i className="bx bx-chevron-down"></i>
                 </div>
 
                 <ul className="options hidden ">
                   <li className="option">
                     <Link
                       href="/vastuullinen-sisallontuotanto"
-                      className="option-text"
+                      className={`option-text ${isCurrentPage(
+                        "vastuullinen-sisallontuotanto"
+                      )}`}
                     >
                       Vastuullinen sisällöntuotanto
                     </Link>
                   </li>
                   <li className="option">
-                    <Link href="/viestinnan-palvelut" className="option-text">
+                    <Link
+                      href="/viestinnan-palvelut"
+                      className={`option-text ${isCurrentPage(
+                        "viestinnan-palvelut"
+                      )}`}
+                    >
                       Muut viestinnän palvelut
                     </Link>
                   </li>
@@ -173,7 +210,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                 }}
               >
                 <div className="text-gray-100">
-                  <span className="sBtn-text cursor-pointer">
+                  <span className="cursor-pointer whitespace-nowrap">
                     TUTUSTUTAAN!{" "}
                     <FontAwesomeIcon
                       icon={faChevronDown}
@@ -187,7 +224,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
 
                 <ul className="options hidden ">
                   <li className="option">
-                    <Link href="/sananen-minusta" className="option-text">
+                    <Link href="/minusta" className="option-text">
                       Sananen minusta
                     </Link>
                   </li>
@@ -208,7 +245,7 @@ const Menu = ({ currentPage }: { currentPage: string }) => {
                 PORTFOLIO
               </Link>
               <Link
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline`}
+                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline whitespace-nowrap`}
                 key="yhdeydenotto"
                 href="/#yhteydenotto"
               >

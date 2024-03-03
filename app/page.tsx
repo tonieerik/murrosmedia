@@ -16,34 +16,25 @@ export const metadata: Metadata = {
   description: "Mandariinimedia",
 };
 
-const quotation1 = [
-  "Vain viestinnän avulla vastuulliset teot tulevat näkyviksi – sekä organisaation sisällä",
-  "että ulkoisille sidosryhmille. Ilman viestintää vastuullisuus jää auttamatta pimentoon.",
-];
-const quotation2 = [
-  "Avoin, ymmärrettävä ja uskottava vastuullisuusviestintä herättää luottamusta.",
-  "Luottamus taas vahvistaa potentiaalisen asiakkaan halua ostaa juuri sinulta.",
-];
-
 const Page = async () => {
   const testimonials = await client.fetch<Testimonial[]>(
     `*[_type == "testimonial"]`
   );
-  const quote1 = await client.fetch<Page[]>(
-    `*[_type == "page" && pageKey == "quote1"]`
-  );
-  const quote2 = await client.fetch<Page[]>(
-    `*[_type == "page" && pageKey == "quote2"]`
-  );
-  const contactContent = await client.fetch<Page[]>(
-    `*[_type == "page" && pageKey == "contact"]`
-  );
+  const quote1 = (
+    await client.fetch<Page[]>(`*[_type == "page" && pageKey == "quote1"]`)
+  )[0];
+  const quote2 = (
+    await client.fetch<Page[]>(`*[_type == "page" && pageKey == "quote2"]`)
+  )[0];
+  const contactContent = (
+    await client.fetch<Page[]>(`*[_type == "page" && pageKey == "contact"]`)
+  )[0];
 
   return (
     <>
       <Menu currentPage="" />
       <Intro />
-      <Quotation content={quote1[0].content} />
+      <Quotation content={quote1.content} />
       <Services />
       <Image
         className="mt-0"
@@ -54,8 +45,13 @@ const Page = async () => {
       />
       <Collaboration />
       <Testimonials testimonials={testimonials} />
-      <Quotation content={quote2[0].content} />
-      <Contact content={contactContent[0].content} />
+      <Quotation content={quote2.content} />
+      <Contact
+        title={contactContent.title}
+        content={contactContent.content}
+        image={contactContent.image}
+        imageAlt={contactContent.imageAlt}
+      />
     </>
   );
 };

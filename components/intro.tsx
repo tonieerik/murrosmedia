@@ -5,17 +5,15 @@ import { client } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
 
 const Intro = async () => {
-  const introContent = await client.fetch<Page[]>(
-    `*[_type == "page" && pageKey == "intro"]`
-  );
+  const introContent = (
+    await client.fetch<Page[]>(`*[_type == "page" && pageKey == "frontpage"]`)
+  )[0];
 
   return (
     <section className="mx-8 my-8 md:mx-48 md:my-16">
-      {introContent.map((paragraph, index) =>
-        paragraph.content.map((content, i) => (
-          <PortableText key={`intro-p${index}-b${i}`} value={content} />
-        ))
-      )}
+      {introContent.header?.map((content, i) => (
+        <PortableText key={`intro-b${i}`} value={content} />
+      ))}
     </section>
   );
 };

@@ -3,13 +3,16 @@ import React from "react";
 import { CollaborationLogo } from "@/interfaces/collaborationLogo";
 import { client, urlFor } from "@/utils/sanity";
 
-const Content = async () => {
+const Collaboration = async () => {
   const logos = await client.fetch<CollaborationLogo[]>(
     `*[_type == "collaborationLogo"]`
   );
 
   return (
-    <>
+    <section
+      className="bg-white flex flex-col mx-4 md:mx-0 my-12"
+      id="collaboration"
+    >
       <h2 className="text-2xl text-teal flex justify-center mt-4 mb-0">
         KÄDENJÄLKEENI OVAT LUOTTANEET MUUN MUASSA
       </h2>
@@ -36,17 +39,8 @@ const Content = async () => {
             ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
-
-const Collaboration = () => (
-  <section
-    className="bg-white flex flex-col mx-4 md:mx-0 my-12"
-    id="collaboration"
-  >
-    <Content />
-  </section>
-);
 
 export default Collaboration;

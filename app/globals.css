@@ -10,8 +10,43 @@ div {
 
 h2 {
   font-size: 22.5px;
+  font-weight: 600;
   color: #0b9995;
   margin-bottom: 7px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff9d5c;
+  margin-bottom: 7px;
+}
+
+.services h1 {
+  font-size: 22.5px;
+  font-weight: 600;
+  color: #0b9995;
+  margin-bottom: 30px;
+}
+
+.services h2,
+.about-me h2,
+.about-responsibility h2 {
+  font-size: 22.5px;
+  font-weight: 600;
+  color: #0b9995;
+  margin-bottom: 30px;
+}
+
+.service-block h2 {
+  color: white;
+}
+
+.services h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 30px;
 }
 
 .bg-orange {
@@ -69,7 +104,7 @@ h2 {
 }
 li {
   list-style-type: disc;
-  line-height: 20px;
+  line-height: 24px;
 }
 li.slide {
   list-style-type: none;

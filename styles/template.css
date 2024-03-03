@@ -341,7 +341,7 @@ ul {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.45rem;
   list-style-position: outside;
   list-style-image: none;
 }
@@ -385,7 +385,7 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0.75rem;
 }
 pre {
   margin-left: 0;
@@ -476,9 +476,9 @@ dt {
 th {
   font-weight: bold;
 }
-li {
+/* li {
   margin-bottom: calc(1.45rem / 2);
-}
+} */
 ol li {
   padding-left: 0;
 }
