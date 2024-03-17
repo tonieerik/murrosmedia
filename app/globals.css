@@ -49,6 +49,10 @@ h3 {
   margin-bottom: 30px;
 }
 
+.bg-error {
+  background-color: #9a0000;
+}
+
 .bg-orange {
   background-color: #ff9d5c;
 }

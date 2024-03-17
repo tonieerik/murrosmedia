@@ -19,6 +19,7 @@ const Content = ({
 }) => {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -38,13 +39,19 @@ const Content = ({
         "content-type": `application/json`,
       },
     })
-      .then((res) => res.json())
-      .then((body) => {
-        if (body === "OK") {
-          setLoading(false);
+      .then((res) => {
+        setLoading(false);
+
+        if (res.ok) {
           setSent(true);
           setTimeout(clearForm, 3000);
+        } else {
+          throw new Error(`Failed to send email: ${res.statusText}`);
         }
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(true);
       });
   };
 
@@ -125,12 +132,14 @@ const Content = ({
 
                 <button
                   className={`${
-                    sent ? "bg-teal" : "bg-orange"
+                    error ? "bg-error" : sent ? "bg-teal" : "bg-orange"
                   } text-white px-4 py-2 rounded opacity-80 hover:opacity-100 hover:cursor-pointer`}
                   onClick={handleSubmit(onSubmit)}
-                  disabled={loading || sent}
+                  disabled={error || loading || sent}
                 >
-                  {sent
+                  {error
+                    ? "Virhe lähettäessä viestiä. Laitatko sähköpostia, kiitos."
+                    : sent
                     ? "Viesti lähetetty"
                     : loading
                     ? "Lähetetään "
