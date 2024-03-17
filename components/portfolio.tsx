@@ -1,9 +1,8 @@
-import Image from "next/image";
-import React from "react";
 import type { Page } from "@/interfaces/page";
 import { PortfolioText } from "@/interfaces/portfolioText";
-import { client, urlFor } from "@/utils/sanity";
+import { client } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
+import SanityImage from "./SanityImage";
 
 const Portfolio = async () => {
   const portfolioContent = (
@@ -29,8 +28,8 @@ const Portfolio = async () => {
                   key={`portfolioText-${i}`}
                   className="lg:mt-8 mb-4 lg:pl-8"
                 >
-                  <Image
-                    src={urlFor(text.image)}
+                  <SanityImage
+                    src={text.image}
                     alt={text.altText}
                     width={1000}
                     height={484}

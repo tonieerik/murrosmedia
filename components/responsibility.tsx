@@ -1,7 +1,7 @@
 import type { Page } from "@/interfaces/page";
-import { client, urlFor } from "@/utils/sanity";
+import { client } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
-import Image from "next/image";
+import SanityImage from "./SanityImage";
 
 const Responsibility = async () => {
   const pageContent = (
@@ -38,9 +38,9 @@ const Responsibility = async () => {
         </button>
       </section>
       {pageContent.image && (
-        <Image
+        <SanityImage
           className="w-full"
-          src={urlFor(pageContent.image)}
+          src={pageContent.image}
           alt={pageContent.imageAlt || "Sisällöntuottaja Nelli"}
           width={1334}
           height={2000}

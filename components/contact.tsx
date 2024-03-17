@@ -1,12 +1,11 @@
 "use client";
 
-import { urlFor } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
-import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import PulseLoader from "react-spinners/PulseLoader";
+import SanityImage from "./SanityImage";
 
 const Content = ({
   content,
@@ -151,8 +150,8 @@ const Content = ({
           </form>
         </div>
         <div className="w-1/3 ml-8 xs:max-md:hidden">
-          <Image
-            src={urlFor(image)}
+          <SanityImage
+            src={image}
             alt={imageAlt || ""}
             width={1334}
             height={2000}
