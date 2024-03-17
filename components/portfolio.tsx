@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Page } from "@/interfaces/page";
+import type { Page } from "@/interfaces/page";
 import { PortfolioText } from "@/interfaces/portfolioText";
 import { client, urlFor } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";

@@ -1,6 +1,6 @@
 "use server";
 
-import { Page } from "@/interfaces/page";
+import type { Page } from "@/interfaces/page";
 import { client } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
 

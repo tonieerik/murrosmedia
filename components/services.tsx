@@ -1,4 +1,4 @@
-import { Page } from "@/interfaces/page";
+import type { Page } from "@/interfaces/page";
 import { Service } from "@/interfaces/service";
 import { client } from "@/utils/sanity";
 import { PortableText } from "@portabletext/react";
