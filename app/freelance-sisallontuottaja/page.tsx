@@ -18,7 +18,7 @@ const Page = async () => {
   return (
     <>
       <Menu currentPage="freelance-sisallontuottaja" />
-      <div className="my-16 mx-24">
+      <div className="m-8 md:my-16 md:mx-24">
         <Intro />
         <Content1 />
       </div>
