@@ -5,7 +5,7 @@ import Intro from "@/components/intro";
 import Quotation from "@/components/quotation";
 import Services from "@/components/services";
 import Testimonials from "@/components/testimonials";
-import { Page } from "@/interfaces/page";
+import type { Page } from "@/interfaces/page";
 import { Testimonial } from "@/interfaces/testimonial";
 import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Mandariinimedia",
 };
 
-const Page = async () => {
+const IndexPage = async () => {
   const testimonials = await client.fetch<Testimonial[]>(
     `*[_type == "testimonial"]`
   );
@@ -56,4 +56,4 @@ const Page = async () => {
   );
 };
 
-export default Page;
+export default IndexPage;

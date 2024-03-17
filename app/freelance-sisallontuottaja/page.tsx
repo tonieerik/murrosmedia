@@ -17,15 +17,13 @@ const Page = async () => {
 
   return (
     <>
-      <Menu currentPage="" />
+      <Menu currentPage="freelance-sisallontuottaja" />
       <div className="my-16 mx-24">
         <Intro />
         <Content1 />
       </div>
       <Testimonials testimonials={testimonials} />
-      {/* <div className="my-16 mx-24"> */}
       <Content2 />
-      {/* </div> */}
     </>
   );
 };
