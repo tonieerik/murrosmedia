@@ -10,6 +10,7 @@ import { Testimonial } from "@/interfaces/testimonial";
 import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
 import Collaboration from "@/components/collaboration";
+import { CollaborationLogo } from "@/interfaces/collaborationLogo";
 
 export const metadata: Metadata = {
   title: "Mandariinimedia",
@@ -29,6 +30,9 @@ const IndexPage = async () => {
   const contactContent = (
     await client.fetch<Page[]>(`*[_type == "page" && pageKey == "contact"]`)
   )[0];
+  const logos = await client.fetch<CollaborationLogo[]>(
+    `*[_type == "collaborationLogo"]`
+  );
 
   return (
     <>
@@ -43,7 +47,7 @@ const IndexPage = async () => {
         width="2000"
         height="1334"
       />
-      <Collaboration />
+      <Collaboration logos={logos} />
       <Testimonials testimonials={testimonials} />
       <Quotation content={quote2.content} />
       <Contact

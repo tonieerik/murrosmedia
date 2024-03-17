@@ -1,13 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { urlForImage } from "@/utils/sanity";
 import { CollaborationLogo } from "@/interfaces/collaborationLogo";
-import { client, urlFor } from "@/utils/sanity";
 
-const Collaboration = async () => {
-  const logos = await client.fetch<CollaborationLogo[]>(
-    `*[_type == "collaborationLogo"]`
-  );
-
+const Collaboration = ({ logos }: { logos: CollaborationLogo[] }) => {
   return (
     <section
       className="bg-white flex flex-col mx-4 md:mx-0 my-12"
@@ -29,10 +27,13 @@ const Collaboration = async () => {
                   rel="noreferrer"
                 >
                   <Image
-                    src={urlFor(logo.logo)}
+                    src="placeholder.png"
                     alt={logo.altText}
                     width={250}
                     height={100}
+                    loader={({ width, quality = 100 }) =>
+                      urlForImage(logo.logo).width(width).quality(quality).url()
+                    }
                   />
                 </a>
               </div>
