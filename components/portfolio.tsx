@@ -20,24 +20,24 @@ const Portfolio = async () => {
           {portfolioContent.content.map((content, i) => (
             <PortableText key={`portfolio-b${i}`} value={content} />
           ))}
-          <div className="w-full grid gap-8 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0">
+          <div className="w-full grid gap-0 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0 pr-16">
             {portfolioTexts
               .sort((a, b) => a.order - b.order)
               .map((text, i) => (
                 <div
                   key={`portfolioText-${i}`}
-                  className="lg:mt-8 mb-4 lg:pl-8"
+                  className="lg:mt-8 mb-4 md:mb-0 lg:pl-8"
                 >
-                  <SanityImage
+                  {/* <SanityImage
                     src={text.image}
                     alt={text.altText}
                     width={1000}
                     height={484}
                     className="mb-4"
-                  />
+                  /> */}
                   <p className="mb-2 text-md font-bold">
                     <a
-                      className="underline"
+                      className="underline text-teal"
                       href={text.url}
                       target="_blank"
                       rel="noreferrer"

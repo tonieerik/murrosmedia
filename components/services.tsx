@@ -10,7 +10,7 @@ const MainServices = async () => {
   )[0];
 
   return (
-    <section className="services">
+    <section className="services mt-6">
       <h1>{mainService.title}</h1>
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
@@ -31,7 +31,7 @@ const MainServices = async () => {
           <button className="mt-8">
             <a
               href={mainService?.ctaUrl}
-              className="bg-orange text-white rounded font-bold p-2"
+              className="bg-orange text-white rounded p-2"
             >
               {mainService?.ctaText}
             </a>
@@ -43,21 +43,16 @@ const MainServices = async () => {
 };
 
 const OtherServices = async () => {
-  const otherServicesTitle = await client.fetch<Page[]>(
-    `*[_type == "page" && pageKey == "otherServicesTitle"]`
-  );
+  const otherServicesTitle = (
+    await client.fetch<Page[]>(
+      `*[_type == "page" && pageKey == "otherServices"]`
+    )
+  )[0].title;
   const otherServices = await client.fetch<Service[]>(`*[_type == "service"]`);
 
   return (
-    <div className="mt-12 mb-8">
-      {otherServicesTitle.map((paragraph, index) =>
-        paragraph.content.map((content, i) => (
-          <PortableText
-            key={`other-services-header-p${index}-b${i}`}
-            value={content}
-          />
-        ))
-      )}
+    <div className="services mt-20 mb-6">
+      <h1>{otherServicesTitle.toUpperCase()}</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
         {otherServices.map((service, index) => (
           <div key={service.title} className="">
@@ -71,7 +66,7 @@ const OtherServices = async () => {
             <button className="my-8">
               <a
                 href={service.url}
-                className="bg-orange text-white rounded font-bold p-2"
+                className="bg-orange text-white rounded p-2"
               >
                 {service.cta}
               </a>
@@ -86,7 +81,7 @@ const OtherServices = async () => {
 const Services = () => {
   return (
     <section className="bg-orange flex mx-0" id="mita-teen">
-      <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/6">
+      <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/5">
         MITEN&nbsp;VOIN&nbsp;AUTTAA?
       </div>
       <div className="w-full bg-white py-12 px-12">

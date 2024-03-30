@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Contact from "@/components/contact";
 import Intro from "@/components/intro";
 import Quotation from "@/components/quotation";
@@ -11,6 +10,7 @@ import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
 import Collaboration from "@/components/collaboration";
 import { CollaborationLogo } from "@/interfaces/collaborationLogo";
+import SanityImage from "@/components/SanityImage";
 
 export const metadata: Metadata = {
   title: "Mandariinimedia",
@@ -33,6 +33,9 @@ const IndexPage = async () => {
   const logos = await client.fetch<CollaborationLogo[]>(
     `*[_type == "collaborationLogo"]`
   );
+  const frontpageContent = (
+    await client.fetch<Page[]>(`*[_type == "page" && pageKey == "frontpage"]`)
+  )[0];
 
   return (
     <>
@@ -40,13 +43,15 @@ const IndexPage = async () => {
       <Intro />
       <Quotation content={quote1.content} />
       <Services />
-      <Image
-        className="mt-0"
-        alt="Sisällöntuottaja Jyväskylästä"
-        src="/sisallontuottaja-jyvaskyla.jpg"
-        width="2000"
-        height="1334"
-      />
+      {frontpageContent.image && (
+        <SanityImage
+          className="mt-0"
+          alt={frontpageContent.imageAlt || ""}
+          src={frontpageContent.image}
+          width="2000"
+          height="1334"
+        />
+      )}
       <Collaboration logos={logos} />
       <Testimonials testimonials={testimonials} />
       <Quotation content={quote2.content} />

@@ -12,6 +12,11 @@ const Page = async () => (
     <Menu
       currentPage="vastuullinen-sisallontuotanto"
       headerText="Vastuullinen sisällöntuotanto"
+      subHeader={[
+        "Sisällöntuotanto vastuullisuusraportin pohjalta",
+        "Vastuullisuusraportti helppolukuiseen kuntoon",
+        "Vastuullisuusviestinnän sparraus ja suunnittelu",
+      ]}
     />
     <ResponsibilityCommunication />
   </>

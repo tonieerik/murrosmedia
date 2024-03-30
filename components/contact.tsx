@@ -176,7 +176,7 @@ const Contact = ({
   return (
     <section className="bg-orange flex mx-0" id="yhteydenotto">
       <div className="flex">
-        <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/6">
+        <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/5">
           {title.toUpperCase()}
         </div>
         <Content content={content} image={image} imageAlt={imageAlt} />

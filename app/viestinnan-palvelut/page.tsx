@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 const Page = async () => (
   <>
-    <Menu currentPage="viestinnan-palvelut" headerText="Viestinnän palvelut" />
+    <Menu
+      currentPage="viestinnan-palvelut"
+      headerText="Viestinnän palvelut"
+      subHeader={["Toimitustyö", "Copywriting", "Kielenhuolto"]}
+    />
     <OtherServices />
   </>
 );

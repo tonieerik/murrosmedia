@@ -1,9 +1,9 @@
 const nameText = "NELLI LEPPÄNEN";
 const headerText = (
   <>
-    Viestinnän ammattilainen ja freelancesisällöntuottaja,
+    Luova kumppanisi
     <br />
-    joka kulkee rinnallasi vastuullisuusviestinnän polulla
+    vastuullisuusviestintään
   </>
 );
 

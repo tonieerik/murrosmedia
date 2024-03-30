@@ -39,7 +39,7 @@ const OtherServices = async () => {
       <button className="mt-8">
         <a
           href={pageContent?.ctaUrl}
-          className="bg-orange text-white rounded font-bold p-4 drop-shadow"
+          className="bg-orange text-white rounded p-4 drop-shadow"
         >
           {pageContent?.ctaText}
         </a>

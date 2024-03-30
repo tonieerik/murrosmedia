@@ -9,6 +9,8 @@ export interface Page {
   footer?: PortableTextBlock[];
   image?: string;
   imageAlt?: string;
+  image2?: string;
+  image2Alt?: string;
   ctaText?: string;
   ctaUrl?: string;
 }

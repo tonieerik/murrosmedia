@@ -13,29 +13,12 @@ const Responsibility = async () => {
   return (
     <>
       <section className="about-responsibility m-8 md:mx-48 md:my-16">
-        <h1 className="text-teal text-2xl">{pageContent?.title}</h1>
         {pageContent.header?.map((content, i) => (
           <PortableText
             key={`about-responsibility-header-b${i}`}
             value={content}
           />
         ))}
-        <div className="mt-12 bg-teal text-white lg:mr-12 p-12 rounded-xl drop-shadow">
-          {pageContent.content.map((content, i) => (
-            <PortableText
-              key={`about-responsibility-content-b${i}`}
-              value={content}
-            />
-          ))}
-        </div>
-        <button className="mt-12">
-          <a
-            href={pageContent?.ctaUrl}
-            className="bg-orange text-white rounded font-bold p-4 drop-shadow"
-          >
-            {pageContent?.ctaText}
-          </a>
-        </button>
       </section>
       {pageContent.image && (
         <SanityImage
@@ -47,12 +30,33 @@ const Responsibility = async () => {
         />
       )}
       <section className="about-responsibility m-8 md:mx-48 md:my-16">
-        {pageContent.footer?.map((content, i) => (
+        {pageContent.content.map((content, i) => (
           <PortableText
-            key={`about-responsibility-footer-b${i}`}
+            key={`about-responsibility-content-b${i}`}
             value={content}
           />
         ))}
+      </section>
+      <section className="about-responsibility m-8 md:mx-48 md:my-16">
+        <div className="mt-12 bg-teal text-white lg:mr-12 p-12 pt-6 rounded-xl drop-shadow">
+          {pageContent.footer?.map((content, i) => (
+            <PortableText
+              key={`about-responsibility-footer-b${i}`}
+              value={content}
+            />
+          ))}
+        </div>
+        <p className="mt-16">
+          Jaatko kanssani samanlaiset arvot? Joko ryhdytään hommiin?
+        </p>
+        <button className="mt-12">
+          <a
+            href={pageContent?.ctaUrl}
+            className="bg-orange text-white rounded p-4 drop-shadow"
+          >
+            {pageContent?.ctaText}
+          </a>
+        </button>
       </section>
     </>
   );
