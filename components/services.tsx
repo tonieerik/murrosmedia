@@ -85,7 +85,7 @@ const Services = () => (
         MITEN VOIN AUTTAA?
       </p>
     </div>
-    <div className="flex-1 overflow-auto bg-white py-12 px-12">
+    <div className="flex-1 overflow-auto bg-white py-12 px-8 md:px-16">
       <MainServices />
       <hr className="mt-16" />
       <OtherServices />

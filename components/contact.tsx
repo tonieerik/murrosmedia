@@ -180,7 +180,7 @@ const Contact = ({
           {title.toUpperCase()}
         </p>
       </div>
-      <div className="flex-1 overflow-auto bg-white py-12 px-12">
+      <div className="flex-1 overflow-auto bg-white py-4">
         <Content content={content} image={image} imageAlt={imageAlt} />
       </div>
     </section>
