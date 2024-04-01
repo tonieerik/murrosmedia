@@ -175,10 +175,12 @@ const Contact = ({
 }) => {
   return (
     <section className="bg-orange flex mx-0" id="yhteydenotto">
-      <div className="flex">
-        <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/5">
+      <div className="hidden md:flex flex-col justify-center items-center w-32">
+        <p className="transform -rotate-90 origin-center text-white text-xl text-center tracking-widest whitespace-nowrap">
           {title.toUpperCase()}
-        </div>
+        </p>
+      </div>
+      <div className="flex-1 overflow-auto bg-white py-12 px-12">
         <Content content={content} image={image} imageAlt={imageAlt} />
       </div>
     </section>

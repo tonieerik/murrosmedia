@@ -78,19 +78,19 @@ const OtherServices = async () => {
   );
 };
 
-const Services = () => {
-  return (
-    <section className="bg-orange flex mx-0" id="mita-teen">
-      <div className="hidden md:block self-center text-xl text-white whitespace-no-wrap transform -rotate-90 tracking-widest w-1/5">
-        MITEN&nbsp;VOIN&nbsp;AUTTAA?
-      </div>
-      <div className="w-full bg-white py-12 px-12">
-        <MainServices />
-        <hr className="mt-16" />
-        <OtherServices />
-      </div>
-    </section>
-  );
-};
+const Services = () => (
+  <section className="bg-orange flex mx-0" id="mita-teen">
+    <div className="hidden md:flex flex-col justify-center items-center w-32">
+      <p className="transform -rotate-90 origin-center text-white text-xl text-center tracking-widest whitespace-nowrap">
+        MITEN VOIN AUTTAA?
+      </p>
+    </div>
+    <div className="flex-1 overflow-auto bg-white py-12 px-12">
+      <MainServices />
+      <hr className="mt-16" />
+      <OtherServices />
+    </div>
+  </section>
+);
 
 export default Services;
