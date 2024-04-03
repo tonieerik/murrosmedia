@@ -1,4 +1,5 @@
 @import url("//fonts.googleapis.com/css2?family=Dosis&family=Titillium+Web:wght@200;400&display=swap");
+@import url("//fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +7,15 @@
 
 html {
   font-family: "Titillium web", sans-serif !important;
+}
+
+section a {
+  text-decoration: none;
+  color: #ff9d5c;
+}
+
+section a:hover {
+  text-decoration: underline;
 }
 
 h1 {
@@ -33,9 +43,12 @@ h3 {
 h4 {
   font-size: 18px;
   font-weight: 600;
-  /* color: #ff9d5c; */
   margin-top: 30px;
   margin-bottom: 7px;
+}
+
+.handwriting {
+  font-family: Caveat, sans-serif !important;
 }
 
 .services h1 {
@@ -71,6 +84,11 @@ h4 {
   color: white;
   margin-top: 30px;
   margin-bottom: 10px;
+}
+
+.about-responsibility li {
+  margin-left: 10px;
+  list-style-type: none;
 }
 
 .bg-error {

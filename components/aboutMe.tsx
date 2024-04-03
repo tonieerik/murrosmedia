@@ -34,18 +34,18 @@ const AboutMe = async () => {
         </div>
       </section>
       <Quotation content={quoteResponsibility.content} />
-      <section className="about-me flex flex-col lg:flex-row m-8 md:mx-48 md:my-16">
-        <div className="w-full lg:w-1/2 mt-6 lg:mt-12 lg:mr-12">
-          {pageContent.image2 && (
+      <section className="about-me mx-8 md:mx-48 my-16 flow-root">
+        {pageContent.image2 && (
+          <div className="hidden lg:block image-container float-left w-full lg:w-1/2 mt-12 mr-12 mb-12 lg:mb-0">
             <SanityImage
               src={pageContent.image2}
               alt={pageContent.image2Alt || "Sisällöntuottaja Nelli"}
               width={1334}
               height={2000}
             />
-          )}
-        </div>
-        <div className="w-full lg:w-1/2">
+          </div>
+        )}
+        <div className="text-content">
           {pageContent.footer?.map((content, i) => (
             <PortableText key={`about-me-b${i}`} value={content} />
           ))}

@@ -46,10 +46,7 @@ const Responsibility = async () => {
             />
           ))}
         </div>
-        <p className="mt-16">
-          Jaatko kanssani samanlaiset arvot? Joko ryhdytään hommiin?
-        </p>
-        <button className="mt-12">
+        <button className="mt-20">
           <a
             href={pageContent?.ctaUrl}
             className="bg-orange text-white rounded p-4 drop-shadow"

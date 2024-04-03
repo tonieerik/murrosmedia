@@ -15,19 +15,17 @@ const Portfolio = async () => {
   return (
     <section className="bg-orange flex mx-0" id="portfolio">
       <div className="w-full bg-white flex pb-8 px-2 lg:px-8 flex-row md:px-0 md:flex-col">
-        <div className="bg-white p-8 md:p-16">
+        <div className="bg-white mx-8 my-8 md:mx-48 md:my-16">
           <h1 className="text-teal text-2xl">{portfolioContent.title}</h1>
           {portfolioContent.content.map((content, i) => (
             <PortableText key={`portfolio-b${i}`} value={content} />
           ))}
-          <div className="w-full grid gap-0 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0 pr-16">
+          <div className="h-6"> </div>
+          <div className="w-full grid gap-4 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0">
             {portfolioTexts
               .sort((a, b) => a.order - b.order)
               .map((text, i) => (
-                <div
-                  key={`portfolioText-${i}`}
-                  className="lg:mt-8 mb-4 md:mb-0 lg:pl-8"
-                >
+                <div key={`portfolioText-${i}`}>
                   {/* <SanityImage
                     src={text.image}
                     alt={text.altText}

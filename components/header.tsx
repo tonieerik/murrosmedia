@@ -1,11 +1,5 @@
-const nameText = "NELLI LEPPÄNEN";
-const headerText = (
-  <>
-    Luova kumppanisi
-    <br />
-    vastuullisuusviestintään
-  </>
-);
+const nameText = "Nelli Leppänen";
+const headerText = <>Luova kumppanisi vastuullisuusviestintään</>;
 
 const Header = () => (
   <div className="text-gray-100">
@@ -15,7 +9,7 @@ const Header = () => (
           <div className="flex flex-row justify-end w-fit p-2 mx-2">
             <div className="w-full flex-col items-end bg-teal rounded">
               <div className="px-2 pt-2 pb-1 leading-none">
-                <strong>{nameText}</strong>
+                <strong className="handwriting">{nameText}</strong>
               </div>
               <div className="px-2 pb-2 text-sm leading-snug">{headerText}</div>
             </div>
@@ -27,7 +21,7 @@ const Header = () => (
       <div className="bg-teal flex">
         <div className="w-2/5 h-[380px] bg-cover bg-[url('/freelance-sisallontuottaja-tablet.png')]"></div>
         <div className="flex flex-col justify-end w-3/5 pb-12">
-          <div className="text-4xl font-bold">{nameText}</div>
+          <div className="text-4xl font-bold handwriting">{nameText}</div>
           <br />
           <div className="text-xl">
             <div>{headerText}</div>
@@ -39,9 +33,9 @@ const Header = () => (
       <div className="bg-teal flex">
         <div className="w-1/2 h-[530px] bg-cover bg-[url('/freelance-sisallontuottaja-full.png')]"></div>
         <div className="flex flex-col justify-end w-1/2 pb-12">
-          <div className="text-4xl font-bold">{nameText}</div>
+          <div className="text-8xl handwriting">{nameText}</div>
           <br />
-          <div className="text-xl">
+          <div className="text-2xl">
             <div>{headerText}</div>
           </div>
         </div>
@@ -51,7 +45,7 @@ const Header = () => (
       <div className="bg-teal flex">
         <div className="w-1/2 h-[640px] bg-cover bg-[url('/freelance-sisallontuottaja-full.png')]"></div>
         <div className="flex flex-col justify-end w-1/2 pb-12">
-          <div className="text-4xl font-bold">{nameText}</div>
+          <div className="text-4xl font-bold handwriting">{nameText}</div>
           <br />
           <div className="text-xl">
             <div>{headerText}</div>
