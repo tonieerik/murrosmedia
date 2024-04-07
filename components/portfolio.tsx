@@ -21,7 +21,7 @@ const Portfolio = async () => {
             <PortableText key={`portfolio-b${i}`} value={content} />
           ))}
           <div className="h-6"> </div>
-          <div className="w-full grid gap-4 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0">
+          <div className="w-full grid gap-8 grid-cols-1 lg:grid-cols-2 mt-12 lg:mt-0">
             {portfolioTexts
               .sort((a, b) => a.order - b.order)
               .map((text, i) => (

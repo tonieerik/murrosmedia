@@ -6,11 +6,11 @@ const Collaboration = ({ logos }: { logos: CollaborationLogo[] }) => (
     className="bg-white flex flex-col mx-4 md:mx-0 my-12"
     id="collaboration"
   >
-    <h2 className="text-2xl text-teal flex justify-center mt-4 mb-0">
+    <h2 className="text-2xl text-teal flex justify-center mt-4 mb-8">
       KÄDENJÄLKEENI OVAT LUOTTANEET MUUN MUASSA
     </h2>
     <div className="w-full md:w-2/3 mx-auto p-8 bg-white">
-      <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex flex-col justify-center items-center">
         {logos
           .sort((a, b) => a.order - b.order)
           .map((logo, i) => (
@@ -24,7 +24,7 @@ const Collaboration = ({ logos }: { logos: CollaborationLogo[] }) => (
                 <SanityImage
                   src={logo.logo}
                   alt={logo.altText}
-                  width={250}
+                  width={600}
                   height={100}
                 />
               </a>

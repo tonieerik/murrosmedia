@@ -29,7 +29,7 @@ const Responsibility = async () => {
           height={2000}
         />
       )}
-      <section className="about-responsibility m-8 md:mx-48 md:my-16">
+      <section className="about-responsibility m-8 md:mx-48 md:my-8 md:mt-16">
         {pageContent.content.map((content, i) => (
           <PortableText
             key={`about-responsibility-content-b${i}`}
@@ -37,8 +37,8 @@ const Responsibility = async () => {
           />
         ))}
       </section>
-      <section className="about-responsibility m-8 md:mx-48 md:my-16">
-        <div className="mt-12 bg-teal text-white lg:mr-12 p-12 pt-6 rounded-xl drop-shadow">
+      <section className="about-responsibility m-8 md:mx-48 md:mb-16">
+        <div className="bg-teal text-white lg:mr-12 p-12 pt-6 rounded-xl drop-shadow">
           {pageContent.footer?.map((content, i) => (
             <PortableText
               key={`about-responsibility-footer-b${i}`}

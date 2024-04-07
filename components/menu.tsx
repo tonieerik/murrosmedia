@@ -102,7 +102,7 @@ const Menu = ({
             className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-4 px-4"
             key="portfolio"
           >
-            TUTUSTUTAAN!
+            TUTUSTUTAAN
           </li>
           <li onClick={toggleMenu}>
             <Link
@@ -262,7 +262,7 @@ const Menu = ({
               >
                 <div className="text-gray-100">
                   <span className="cursor-pointer whitespace-nowrap">
-                    TUTUSTUTAAN!{" "}
+                    TUTUSTUTAAN{" "}
                     <FontAwesomeIcon
                       icon={faChevronDown}
                       className={`icon align-middle ${
