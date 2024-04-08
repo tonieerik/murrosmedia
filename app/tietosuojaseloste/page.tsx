@@ -2,8 +2,9 @@ import { Metadata } from "next";
 import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
-  title: "Freelancesisällöntuottaja | Mandariinimedia",
-  description: "Mandariinimedia",
+  title: "Tietosuojaseloste | Mandariinimedia",
+  description:
+    "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
 };
 
 const Page = () => (

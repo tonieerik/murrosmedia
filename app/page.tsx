@@ -13,8 +13,9 @@ import { CollaborationLogo } from "@/interfaces/collaborationLogo";
 import SanityImage from "@/components/SanityImage";
 
 export const metadata: Metadata = {
-  title: "Mandariinimedia",
-  description: "Mandariinimedia",
+  title: "Luova kumppanisi vastuullisuusviestintään | Mandariinimedia",
+  description:
+    "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
 };
 
 const IndexPage = async () => {
