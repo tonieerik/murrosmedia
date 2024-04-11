@@ -46,7 +46,7 @@ const Responsibility = async () => {
             />
           ))}
         </div>
-        <button className="mt-20">
+        <button className="mt-12 mb-6 md:mb-0">
           <a
             href={pageContent?.ctaUrl}
             className="bg-orange text-white rounded p-4 drop-shadow"
