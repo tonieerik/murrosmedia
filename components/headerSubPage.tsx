@@ -8,7 +8,7 @@ const HeaderSubPage = ({
   <div className="text-gray-100">
     <div className="xxl:hidden">
       <div className="bg-cover bg-[url('/freelance-kirjoittaja-tablet.webp')]">
-        <div className="flex justify-end items-end md:items-center h-[320px] md:h-[640px] lg:h-[800px] pb-1">
+        <div className="flex justify-end items-end md:items-center h-[320px] md:h-[640px] lg:h-[800px] pb-3">
           <div className="bg-teal p-4 md:p-8 text-xl md:text-5xl leading-snug rounded-l-xl">
             {headerText}
             {subHeader && (

@@ -44,7 +44,7 @@ const links = (
 const Mobile = ({ className }: { className: string }) => (
   <div className={className}>
     <div className="footer border-t border-white bg-teal text-gray-100 p-2 md:p-4 flex justify-evenly">
-      <a href="tel:0407439782" className="text-3xl">
+      <a href="tel:+358407439782" className="text-3xl">
         <FontAwesomeIcon
           icon={faPhone}
           className="icon align-middle"
@@ -84,7 +84,7 @@ const Desktop = ({ className }: { className: string }) => (
       <ul className="m-0 flex items-center">
         <li className="m-0">
           <a
-            href="tel:0407439782"
+            href="tel:+358407439782"
             className="flex justify-content items-center mt-1 text-3xl ml-4"
           >
             <FontAwesomeIcon

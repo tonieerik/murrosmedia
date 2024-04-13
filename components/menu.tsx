@@ -171,14 +171,16 @@ const Menu = ({
       <div className="md:hidden ">
         <AnimatePresence>{isMenuVisible && <MobileMenu />}</AnimatePresence>
         <header className="w-full h-16 flex justify-between bg-orange drop-shadow-lg relative z-10">
-          <Image
-            src={"/mandariinimedia_logo_vaaka_valkea.png"}
-            alt="logo"
-            width="144"
-            height="74"
-            className="h-full"
-            priority
-          />
+          <a href="/">
+            <Image
+              src={"/mandariinimedia_logo_vaaka_valkea.png"}
+              alt="logo"
+              width="144"
+              height="74"
+              className="h-full"
+              priority
+            />
+          </a>
           <button onClick={() => setIsMenuVisible(!isMenuVisible)}>
             <svg
               className="h-10 w-10 mr-4 text-white"

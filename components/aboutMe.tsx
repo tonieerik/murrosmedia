@@ -50,6 +50,16 @@ const AboutMe = async () => {
             <PortableText key={`about-me-b${i}`} value={content} />
           ))}
         </div>
+        {pageContent.image2 && (
+          <div className="block lg:hidden image-container w-full mt-10">
+            <SanityImage
+              src={pageContent.image2}
+              alt={pageContent.image2Alt || "Sisällöntuottaja Nelli"}
+              width={1334}
+              height={2000}
+            />
+          </div>
+        )}
       </section>
     </>
   );
