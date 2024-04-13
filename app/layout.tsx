@@ -1,4 +1,5 @@
 import { Titillium_Web } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -16,6 +17,7 @@ const RootLayout = ({
 }>) => (
   <html lang="en">
     <body className={titillium.className}>{children}</body>
+    <GoogleAnalytics gaId="G-MCDZBZK9JH" />
   </html>
 );
 
