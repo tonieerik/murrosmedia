@@ -75,10 +75,10 @@ const Menu = ({
           <li onClick={toggleMenu}>
             <Link
               className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0 px-4"
-              key="vastuullinen-sisallontuotanto"
-              href="/vastuullinen-sisallontuotanto"
+              key="vastuullisuusviestinta"
+              href="/vastuullisuusviestinta"
             >
-              Vastuullinen sisällöntuotanto{" "}
+              Vastuullisuusviestintä{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className="icon align-middle -rotate-90 w-3"
@@ -234,12 +234,12 @@ const Menu = ({
                 <ul className="options hidden ">
                   <li className="option">
                     <Link
-                      href="/vastuullinen-sisallontuotanto"
+                      href="/vastuullisuusviestinta"
                       className={`option-text ${isCurrentPage(
-                        "vastuullinen-sisallontuotanto"
+                        "vastuullisuusviestinta"
                       )}`}
                     >
-                      Vastuullinen sisällöntuotanto
+                      Vastuullisuusviestintä
                     </Link>
                   </li>
                   <li className="option">

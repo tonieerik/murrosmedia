@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const Page = async () => (
   <>
     <Menu
-      currentPage="vastuullinen-sisallontuotanto"
-      headerText="Vastuullinen sisällöntuotanto"
+      currentPage="vastuullisuusviestinta"
+      headerText="Vastuullisuusviestintä"
       // subHeader={[
       //   "Sisällöntuotanto vastuullisuusraportin pohjalta",
       //   "Vastuullisuusraportti helppolukuiseen kuntoon",
