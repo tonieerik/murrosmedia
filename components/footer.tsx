@@ -51,7 +51,7 @@ const Mobile = ({ className }: { className: string }) => (
           style={{ height: "26px" }}
         />
       </a>
-      <a href="mailto:nelli@mandariinimedia.fi" className="text-3xl">
+      <a href="mailto:nelli@murrosmedia.fi" className="text-3xl">
         <FontAwesomeIcon icon={faEnvelope} className="align-middle" />
       </a>
       <a
@@ -97,13 +97,11 @@ const Desktop = ({ className }: { className: string }) => (
         </li>
         <li className="m-0">
           <a
-            href="mailto:nelli@mandariinimedia.fi"
+            href="mailto:nelli@murrosmedia.fi"
             className="flex justify-content items-center mt-1 text-3xl ml-2"
           >
             <FontAwesomeIcon icon={faEnvelope} className="icon ml-2" />
-            <span className="text-lg mt-2 ml-2 mr-4">
-              nelli@mandariinimedia.fi
-            </span>
+            <span className="text-lg mt-2 ml-2 mr-4">nelli@murrosmedia.fi</span>
           </a>
         </li>
         <li className="m-0">
@@ -129,7 +127,7 @@ const Desktop = ({ className }: { className: string }) => (
               className="icon ml-2"
               style={{ height: "35px", marginBottom: "-2px" }}
             />
-            <span className="text-lg mb-2 ml-2 mr-4">mandariinimedia</span>
+            <span className="text-lg mb-2 ml-2 mr-4">murrosmedia</span>
           </a>
         </li>
       </ul>

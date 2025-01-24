@@ -27,10 +27,10 @@ export const POST = async (req: Request) => {
     }
 
     const msg = {
-      to: "nelli@mandariinimedia.fi",
-      from: "Mandariinimedia <nelli@mandariinimedia.fi>", // Verified sender
+      to: "nelli@murrosmedia.fi",
+      from: "Murrosmedia <nelli@murrosmedia.fi>", // Verified sender
       reply_to: htmlEntities(payload?.email),
-      subject: "Mandariinimedia: viesti verkkosivuilta",
+      subject: "Murrosmedia: viesti verkkosivuilta",
       text: `Nimi: ${htmlEntities(payload?.name)}, Sähköposti: ${htmlEntities(
         payload?.email
       )}, Puhelin: ${htmlEntities(payload?.phone)}, Viesti: ${htmlEntities(

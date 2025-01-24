@@ -4,7 +4,7 @@ COPY package.json /app/
 WORKDIR /app
 COPY . ./
 
-ENV NEXT_PUBLIC_APP_URL=https://mandariinimedia.fi
+ENV NEXT_PUBLIC_APP_URL=https://murrosmedia.fi
 
 RUN npm install
 RUN npm run build

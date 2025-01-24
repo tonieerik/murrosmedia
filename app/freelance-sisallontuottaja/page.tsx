@@ -5,7 +5,7 @@ import { client } from "@/utils/sanity";
 import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
-  title: "Vastuullisuusviestinnän freelance-sisällöntuottaja | Mandariinimedia",
+  title: "Vastuullisuusviestinnän freelance-sisällöntuottaja | Murrosmedia",
   description:
     "Haluatko viestinnällä lisää näkyvyyttä, asiakkaita tai myyntiä? Ota avuksesi freelancesisällöntuottaja. Taion vaikuttavia tekstejä, joilla on merkitystä.",
 };
@@ -201,7 +201,7 @@ const Content2 = () => (
     <p className="mt-6">
       Oletpa sitten yrittäjä tai viestintätoimiston edustaja ja kaipaat osaavaa
       viestintäalan freelanceria, olen täällä sinua varten. Tutustu tarkemmin
-      Mandariinimedian{" "}
+      Murrosmedian{" "}
       <a
         href="/viestinnan-palvelut"
         className="text-orange font-bold hover:underline"

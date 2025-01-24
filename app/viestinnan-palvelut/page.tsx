@@ -3,7 +3,7 @@ import Menu from "@/components/menu";
 import OtherServices from "@/components/otherServices";
 
 export const metadata: Metadata = {
-  title: "Luova kumppanisi vastuullisuusviestintään | Mandariinimedia",
+  title: "Luova kumppanisi vastuullisuusviestintään | Murrosmedia",
   description:
     "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
 };

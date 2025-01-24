@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
-  title: "Tietosuojaseloste | Mandariinimedia",
+  title: "Tietosuojaseloste | Murrosmedia",
   description:
     "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
 };
@@ -18,22 +18,22 @@ const Page = () => (
           </h1>
         </div>
         <div className="mt-12 text-gray-500">
-          Tämä on Mandariinimedian EU:n yleisen tietosuoja-asetuksen (GDPR)
-          mukainen rekisteri- ja tietosuojaseloste. Tietosuojaselosteessa
-          kerromme, kuinka käsittelemme asiakkaidemme henkilötietoja. Asiakkaan
-          on hyväksyttävä tietosuojaselosteen ehdot käyttääkseen
-          Mandariinimedian tarjoamia palveluita.
+          Tämä on Murrosmedian EU:n yleisen tietosuoja-asetuksen (GDPR) mukainen
+          rekisteri- ja tietosuojaseloste. Tietosuojaselosteessa kerromme,
+          kuinka käsittelemme asiakkaidemme henkilötietoja. Asiakkaan on
+          hyväksyttävä tietosuojaselosteen ehdot käyttääkseen Murrosmedian
+          tarjoamia palveluita.
         </div>
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">1. Rekisterinpitäjä</h2>
           <p className="mt-2">
-            Mandariinimedia
+            Murrosmedia
             <br />
             Y-tunnus: 3157377-6
             <br />
             Wilhelm Schildtin katu 28 A 13, 40740 Jyväskylä
             <br />
-            nelli@mandariinimedia.fi
+            nelli@murrosmedia.fi
           </p>
         </div>
         <div className="mt-4 text-gray-500">
@@ -41,12 +41,12 @@ const Page = () => (
           <p className="mt-2">
             Nimi: Nelli Leppänen
             <br />
-            Yhteystiedot: nelli@mandariinimedia.fi, 040 743 9782
+            Yhteystiedot: nelli@murrosmedia.fi, 040 743 9782
           </p>
         </div>
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">3. Rekisterin nimi</h2>
-          <p className="mt-2">Mandariinimedian asiakasrekisteri</p>
+          <p className="mt-2">Murrosmedian asiakasrekisteri</p>
         </div>
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">
@@ -85,7 +85,7 @@ const Page = () => (
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">7. Mistä saamme tiedot?</h2>
           <p className="mt-2">
-            Keräämme tietosi, kun laitat viestiä Mandariinimedian verkkosivujen
+            Keräämme tietosi, kun laitat viestiä Murrosmedian verkkosivujen
             kautta. Tallennamme myös tietoja, joita olemme saaneet
             sähköpostitse, puhelimitse, sosiaalisen median kanavien kautta,
             sopimuksista, asiakastapaamisista ja muista tilanteista, joissa
@@ -97,8 +97,8 @@ const Page = () => (
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">8. Kuka muu käsittelee tietojasi?</h2>
           <p className="mt-2">
-            Mandariinimedian ulkopuolisilla tahoilla ei ole oikeutta käyttää
-            meiltä saamiaan tietoja. Emme luovuta tai jaa tietojasi kolmansille
+            Murrosmedian ulkopuolisilla tahoilla ei ole oikeutta käyttää meiltä
+            saamiaan tietoja. Emme luovuta tai jaa tietojasi kolmansille
             osapuolille. Emme koskaan myy tietojasi kenellekään.
           </p>
         </div>
@@ -108,7 +108,7 @@ const Page = () => (
             Käsittelemme tietoja vain niin kauan kuin tarvitsemme niitä
             rekisterin tarkoituksen mukaisessa toiminnassa. Voit pyytää
             tietojesi poistamista rekisteristä lähettämällä pyynnön
-            sähköpostitse osoitteeseen nelli@mandariinimedia.fi.
+            sähköpostitse osoitteeseen nelli@murrosmedia.fi.
           </p>
         </div>
         <div className="mt-4 text-gray-500">
@@ -126,7 +126,7 @@ const Page = () => (
             11. Tietojen siirto EU:n tai ETA:n ulkopuolelle
           </h2>
           <p className="mt-2">
-            Mandariinimedia ei siirrä tietoja EU:n tai ETA:n ulkopuolelle.
+            Murrosmedia ei siirrä tietoja EU:n tai ETA:n ulkopuolelle.
           </p>
           <p className="mt-2">
             Poikkeus tietojen siirtoon on Googlen palveluissa, joissa
@@ -146,7 +146,7 @@ const Page = () => (
 
           <p className="my-2">
             Sinulla on seuraavat oikeudet, joiden käyttämistä koskevat pyynnöt
-            tulee tehdä osoitteeseen nelli@mandariinimedia.fi:
+            tulee tehdä osoitteeseen nelli@murrosmedia.fi:
           </p>
           <ul className="list-disc ml-6">
             <li className="leading-snug mb-0">
@@ -170,11 +170,11 @@ const Page = () => (
         <div className="mt-4 text-gray-500">
           <h2 className="font-semibold">13. Evästeet</h2>
           <p className="mt-2">
-            Vieraillessasi verkkosivuillamme Mandariinimedia voi kerätä tietoa
+            Vieraillessasi verkkosivuillamme Murrosmedia voi kerätä tietoa
             palvelujen käyttöön, käyttömääriin ja muuhun tilastointiin liittyen
             sekä käsitellä ja analysoida kyseistä tietoa. Palvelujen sisällön
             käytön seuraamiseksi sekä niiden käytön helpottamiseksi ja
-            nopeuttamiseksi Mandariinimedia voi käyttää ns. evästeitä (cookies).
+            nopeuttamiseksi Murrosmedia voi käyttää ns. evästeitä (cookies).
           </p>
           <p className="mt-2">
             Eväste on lyhyt tekstitiedosto, jonka verkkopalvelin tallentaa
@@ -182,31 +182,31 @@ const Page = () => (
             ja milloin palveluja käytetään, jotta voimme kehittää niitä edelleen
             käyttäjäystävällisemmiksi. Evästeiden avulla kerättävillä tiedoilla
             ei voida tunnistaa yksittäisiä käyttäjiä. Edellytämme, että hyväksyt
-            evästeiden käytön voidaksesi käyttää Mandariinimedian sähköisiä
+            evästeiden käytön voidaksesi käyttää Murrosmedian sähköisiä
             palveluja.
           </p>
 
           <p className="mt-2">
-            Mandariinimedian evästeiden käytön tarkoituksena on analysoida ja
-            kehittää palveluita. Evästeitä voidaan käyttää myös mm.
-            Mandariinimedian internetsivujen kävijäseurantaan sekä mainonnan
-            tehokkuuden mittaukseen. Käytämme evästeiden käsittelyyn
-            analytiikkaohjelmia, eikä käyttäjästä kerätä minkäänlaisia
-            henkilötietoja. Evästeiden avulla seuraamme mm. kuinka kauan sivujen
-            latautuminen vie aikaa ja millaista tietoa kävijät etsivät sekä
-            paikannamme sellaisia sivuston osia, jotka eivät välttämättä toimi
-            niin kuin pitäisi, jotta virheet voidaan korjata.{" "}
+            Murrosmedian evästeiden käytön tarkoituksena on analysoida ja
+            kehittää palveluita. Evästeitä voidaan käyttää myös mm. Murrosmedian
+            internetsivujen kävijäseurantaan sekä mainonnan tehokkuuden
+            mittaukseen. Käytämme evästeiden käsittelyyn analytiikkaohjelmia,
+            eikä käyttäjästä kerätä minkäänlaisia henkilötietoja. Evästeiden
+            avulla seuraamme mm. kuinka kauan sivujen latautuminen vie aikaa ja
+            millaista tietoa kävijät etsivät sekä paikannamme sellaisia sivuston
+            osia, jotka eivät välttämättä toimi niin kuin pitäisi, jotta virheet
+            voidaan korjata.{" "}
           </p>
           <p className="mt-2">
-            Mandariinimedia voi käyttää sivustojen käytöstä kerättyä tietoa myös
+            Murrosmedia voi käyttää sivustojen käytöstä kerättyä tietoa myös
             selaimelle kohdennetun mainonnan tai sisällön tuottamiseen.
-            Mandariinimedia voi luoda kohderyhmiä sen perusteella, millä
+            Murrosmedia voi luoda kohderyhmiä sen perusteella, millä
             internetsivustoilla tietyt selaimet ovat vierailleet. Näille
-            kohderyhmille Mandariinimedia voi esittää niitä todennäköisesti
+            kohderyhmille Murrosmedia voi esittää niitä todennäköisesti
             kiinnostavaa mainontaa tai sisältöä.
           </p>
           <p className="mt-2">
-            Mandariinimedia.fi-sivustolla käytämme Google Analytics
+            Murrosmedia.fi-sivustolla käytämme Google Analytics
             -verkkoanalytiikkajärjestelmää.
           </p>
           <div className="mt-2">
