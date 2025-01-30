@@ -72,7 +72,7 @@ const Mobile = ({ className }: { className: string }) => (
         <FontAwesomeIcon icon={faLinkedin} className="align-middle" />
       </a>
       <a
-        href="https://www.instagram.com/mandariinimedia"
+        href="https://www.instagram.com/murrosmedia"
         target="_blank"
         rel="noreferrer"
         className="text-3xl"
@@ -127,7 +127,7 @@ const Desktop = ({ className }: { className: string }) => (
         </li>
         <li className="m-0">
           <a
-            href="https://www.instagram.com/mandariinimedia"
+            href="https://www.instagram.com/murrosmedia"
             target="_blank"
             rel="noreferrer"
             className="flex justify-content items-center mt-1 text-3xl ml-2"
