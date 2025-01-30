@@ -44,14 +44,22 @@ const links = (
 const Mobile = ({ className }: { className: string }) => (
   <div className={className}>
     <div className="footer border-t border-white bg-teal text-gray-100 p-2 md:p-4 flex justify-evenly">
-      <a href="tel:+358407439782" className="text-3xl">
+      <a
+        href="tel:+358407439782"
+        className="text-3xl"
+        aria-label="Soita Nellille"
+      >
         <FontAwesomeIcon
           icon={faPhone}
           className="icon align-middle"
           style={{ height: "26px" }}
         />
       </a>
-      <a href="mailto:nelli@murrosmedia.fi" className="text-3xl">
+      <a
+        href="mailto:nelli@murrosmedia.fi"
+        className="text-3xl"
+        aria-label="Lähetä sähköpostia"
+      >
         <FontAwesomeIcon icon={faEnvelope} className="align-middle" />
       </a>
       <a
@@ -59,6 +67,7 @@ const Mobile = ({ className }: { className: string }) => (
         target="_blank"
         rel="noreferrer"
         className="text-3xl"
+        aria-label="LinkedIn-profiili"
       >
         <FontAwesomeIcon icon={faLinkedin} className="align-middle" />
       </a>
@@ -67,6 +76,7 @@ const Mobile = ({ className }: { className: string }) => (
         target="_blank"
         rel="noreferrer"
         className="text-3xl"
+        aria-label="Instagram-profiili"
       >
         <FontAwesomeIcon icon={faInstagram} className="align-middle" />
       </a>

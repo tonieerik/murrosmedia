@@ -41,6 +41,7 @@ const Menu = ({
         <button
           className="absolute top-2 right-2 text-gray-100"
           onClick={toggleMenu}
+          aria-label="Sulje valikko"
         >
           <svg
             className="w-10 h-10"
@@ -181,7 +182,10 @@ const Menu = ({
               priority
             />
           </a>
-          <button onClick={() => setIsMenuVisible(!isMenuVisible)}>
+          <button
+            onClick={() => setIsMenuVisible(!isMenuVisible)}
+            aria-label="Avaa valikko"
+          >
             <svg
               className="h-10 w-10 mr-4 text-white"
               xmlns="http://www.w3.org/2000/svg"
