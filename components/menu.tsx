@@ -173,7 +173,7 @@ const Menu = ({
         <header className="w-full h-16 flex justify-between bg-orange drop-shadow-lg relative z-10">
           <a href="/">
             <Image
-              src={"/mandariinimedia_logo_vaaka_valkea.png"}
+              src={"/logo-placeholder.png"}
               alt="logo"
               width="144"
               height="74"

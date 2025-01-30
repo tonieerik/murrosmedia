@@ -132,7 +132,7 @@ const Desktop = ({ className }: { className: string }) => (
         </li>
       </ul>
       <Image
-        src="/mandariinimedia_logo_vaaka_valkea.png"
+        src="/logo-placeholder.png"
         alt="logo"
         width="447"
         height="228"

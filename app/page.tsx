@@ -13,7 +13,7 @@ import { CollaborationLogo } from "@/interfaces/collaborationLogo";
 import SanityImage from "@/components/SanityImage";
 
 export const metadata: Metadata = {
-  title: "Luova kumppanisi vastuullisuusviestintään | Murrosmedia",
+  title: "Kuunteleva kumppanisi vastuullisuusviestintään | Murrosmedia",
   description:
     "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
 };

@@ -1,5 +1,5 @@
 const nameText = "Nelli Leppänen";
-const headerText = <>Luova kumppanisi vastuullisuusviestintään</>;
+const headerText = <>Kuunteleva kumppanisi vastuullisuusviestintään</>;
 
 const Header = () => (
   <div className="text-gray-100">
