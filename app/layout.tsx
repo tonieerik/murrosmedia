@@ -8,6 +8,7 @@ config.autoAddCss = false;
 const titillium = Titillium_Web({
   weight: "400",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const RootLayout = ({
@@ -16,6 +17,14 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => (
   <html lang="en">
+    <head>
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    </head>
     <body className={titillium.className}>{children}</body>
     <GoogleAnalytics gaId="G-MCDZBZK9JH" />
   </html>
