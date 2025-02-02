@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://murrosmedia.fi/freelance-sisallontuottaja",
   },
+  openGraph: {
+    siteName: "Murrosmedia",
+  },
 };
 
 const Page = async () => {
