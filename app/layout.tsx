@@ -18,6 +18,14 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => (
   <html lang="en">
+    <head>
+      <link
+        rel="preload"
+        as="image"
+        href="/freelance-sisallontuottaja-mobile.webp"
+      />
+    </head>
+
     <body className={titillium.className}>{children}</body>
     <GoogleAnalytics gaId="G-MCDZBZK9JH" />
   </html>
