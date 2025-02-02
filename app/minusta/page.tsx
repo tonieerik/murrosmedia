@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Kuunteleva kumppanisi vastuullisuusviestintään | Murrosmedia",
   description:
     "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
+  alternates: {
+    canonical: "https://murrosmedia.fi/minusta",
+  },
 };
 
 const Page = async () => (

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Tietosuojaseloste | Murrosmedia",
   description:
     "Kilpailuetua vastuullisuusviestinnällä! Ulkoista yrityksesi sisällöntuotanto kokeneelle freelancerille tai ota itse haltuun vastuullisen viestinnän salat.",
+  alternates: {
+    canonical: "https://murrosmedia.fi/tietosuojaseloste",
+  },
 };
 
 const Page = () => (

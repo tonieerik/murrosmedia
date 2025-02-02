@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Vastuullisuusviestinnän freelance-sisällöntuottaja | Murrosmedia",
   description:
     "Haluatko viestinnällä lisää näkyvyyttä, asiakkaita tai myyntiä? Ota avuksesi freelancesisällöntuottaja. Taion vaikuttavia tekstejä, joilla on merkitystä.",
+  alternates: {
+    canonical: "https://murrosmedia.fi/freelance-sisallontuottaja",
+  },
 };
 
 const Page = async () => {
