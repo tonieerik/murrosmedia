@@ -11,6 +11,7 @@ type Props = Omit<ImageProps, "src"> & {
 const SanityImage = ({ src, alt, ...props }: Props) => (
   <Image
     src="none"
+    loading="lazy"
     alt={alt}
     loader={({ width, quality = 100 }) =>
       urlForImage(src).width(width).quality(quality).url()

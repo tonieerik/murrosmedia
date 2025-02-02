@@ -143,6 +143,7 @@ const Desktop = ({ className }: { className: string }) => (
       </ul>
       <Image
         src="/logo-placeholder.png"
+        loading="lazy"
         alt="logo"
         width="447"
         height="228"
