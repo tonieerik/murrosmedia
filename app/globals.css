@@ -324,6 +324,9 @@ nav ul li:hover ul.dropdown {
 .mainMenu ul {
   margin-left: 0;
 }
+nav.mainMenu ul li {
+  padding-bottom: 0;
+}
 nav.mainMenu ul li a {
   font-size: 20px;
 }

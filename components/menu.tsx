@@ -69,7 +69,7 @@ const Menu = ({
             />
           </svg>
         </button>
-        <ul className="w-[90%] pt-24">
+        <ul className="w-[90%] pt-12">
           <li onClick={toggleMenu}>
             <Link key="etusivu" href="/">
               ETUSIVU{" "}

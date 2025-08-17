@@ -95,8 +95,8 @@ const PageBuilder = ({ blocks }: { blocks: PageBlock[] }) => (
             <div
               key={key}
               className={`px-4 md:px-16 max-w-6xl mx-auto${
-                noTopPadding ? "" : " mt-16"
-              }${noBottomPadding ? "" : " mb-16"}`}
+                noTopPadding ? "" : " mt-2 md:mt-16"
+              }${noBottomPadding ? "" : " mb-2 md:mb-16"}`}
             >
               {renderBlock(block)}
             </div>
