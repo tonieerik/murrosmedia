@@ -90,7 +90,7 @@ const Mobile = ({ className }: { className: string }) => (
 
 const Desktop = ({ className }: { className: string }) => (
   <div className={className}>
-    <div className="footer border-t border-white bg-teal text-gray-100 flex justify-between">
+    <div className="footer border-t border-white bg-teal text-gray-100 flex justify-between h-32">
       <ul className="m-0 flex items-center">
         <li className="m-0">
           <a
@@ -142,12 +142,12 @@ const Desktop = ({ className }: { className: string }) => (
         </li>
       </ul>
       <Image
-        src="/logo-placeholder.png"
+        src="/murrosmedia-logo.png"
         loading="lazy"
         alt="logo"
         width="447"
         height="228"
-        className="w-[144px] h-[74px] m-2"
+        className="w-[245px] h-[125px] m-2"
       />
     </div>
 

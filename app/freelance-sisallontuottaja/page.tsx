@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Testimonials from "@/components/testimonials";
 import { Testimonial } from "@/interfaces/testimonial";
-import { client } from "@/utils/sanity";
+import { client } from "@/lib/sanity";
 import Menu from "@/components/menu";
 
 export const metadata: Metadata = {
@@ -28,7 +28,10 @@ const Page = async () => {
         <Intro />
         <Content1 />
       </div>
-      <Testimonials testimonials={testimonials} />
+      <Testimonials
+        title="KOKEMUKSIA ASIAKKAILTANI"
+        testimonials={testimonials}
+      />
       <Content2 />
     </>
   );

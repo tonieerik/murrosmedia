@@ -6,9 +6,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const testimonialHeading = "KOKEMUKSIA ASIAKKAILTANI";
 
-const Testimonials = ({ testimonials }: { testimonials: Testimonial[] }) => (
+const Testimonials = ({
+  title,
+  testimonials,
+}: {
+  title: string;
+  testimonials: Testimonial[];
+}) => (
   <section className="bg-orange flex flex-col justify-center items-center text-gray-100 font-bold text-md py-20">
-    <div className="h-12 font-bold text-2xl mb-12">{testimonialHeading}</div>
+    <div className="h-12 font-bold text-2xl mb-12">{title.toUpperCase()}</div>
     <Carousel
       autoPlay={true}
       interval={7000}

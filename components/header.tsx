@@ -98,11 +98,11 @@ const Header = () => (
           />
         </div>
         <div className="flex flex-col justify-end w-1/2 pb-12">
-          <div className={`${caveat.className} text-4xl font-bold`}>
+          <div className={`${caveat.className} text-8xl font-bold`}>
             {nameText}
           </div>
           <br />
-          <div className="text-xl">
+          <div className="text-2xl">
             <div>{headerText}</div>
           </div>
         </div>

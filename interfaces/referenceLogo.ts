@@ -1,6 +1,6 @@
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
-export interface CollaborationLogo {
+export interface ReferenceLogo {
   _id: string;
   order: number;
   altText: string;

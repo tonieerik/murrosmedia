@@ -1,7 +1,7 @@
 "use server";
 
 import type { Page } from "@/interfaces/page";
-import { client } from "@/utils/sanity";
+import { client } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
 
 const Intro = async () => {

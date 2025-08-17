@@ -1,14 +1,20 @@
-import { CollaborationLogo } from "@/interfaces/collaborationLogo";
+import { ReferenceLogo } from "@/interfaces/referenceLogo";
 import SanityImage from "./SanityImage";
 
-const Collaboration = ({ logos }: { logos: CollaborationLogo[] }) => (
+const References = ({
+  title,
+  logos,
+}: {
+  title: string;
+  logos: ReferenceLogo[];
+}) => (
   <section
     className="bg-white flex flex-col mx-4 md:mx-0 my-12"
     id="collaboration"
   >
     <center>
       <h2 className="text-2xl text-teal flex justify-center mt-4 mb-8">
-        KÄDENJÄLKEENI OVAT LUOTTANEET MUUN MUASSA
+        {title}
       </h2>
     </center>
     <div className="w-full md:w-2/3 mx-auto p-8 bg-white">
@@ -37,4 +43,4 @@ const Collaboration = ({ logos }: { logos: CollaborationLogo[] }) => (
   </section>
 );
 
-export default Collaboration;
+export default References;

@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import type { Metadata } from "next";
 
 config.autoAddCss = false;
 
@@ -11,6 +12,15 @@ const titillium = Titillium_Web({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const metadata: Metadata = {
+  title: "Murrosmedia",
+  description: "Murrosmedia",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
+};
 
 const RootLayout = ({
   children,

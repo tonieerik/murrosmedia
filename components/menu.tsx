@@ -9,6 +9,21 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/header";
 import HeaderSubPage from "./headerSubPage";
 
+const SubmenuItem = ({ label }: { label: string }) => (
+  <div style={{ display: "flex", alignItems: "center" }}>
+    <span
+      style={{
+        fontSize: "8px",
+        marginRight: "6px",
+        padding: "0",
+      }}
+    >
+      ▶
+    </span>
+    {label}
+  </div>
+);
+
 const Menu = ({
   currentPage,
   headerText,
@@ -19,11 +34,9 @@ const Menu = ({
   subHeader?: string[];
 }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [isServicesMenuVisible, setIsServicesMenuVisible] = useState(false);
-  const [isAboutMenuVisible, setIsAboutMenuVisible] = useState(false);
 
   const isCurrentPage = (page: string) =>
-    currentPage === page ? "underline" : "no-underline";
+    currentPage === page ? "current-page" : "";
 
   const toggleMenu = () => {
     setIsMenuVisible(!isMenuVisible);
@@ -37,7 +50,7 @@ const Menu = ({
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <nav className="mainMenu pl-6">
+      <nav className="mainMenu pl-2 text-lg text-gray-100">
         <button
           className="absolute top-2 right-2 text-gray-100"
           onClick={toggleMenu}
@@ -56,13 +69,9 @@ const Menu = ({
             />
           </svg>
         </button>
-        <ul className="w-3/4 pt-24">
+        <ul className="w-[90%] pt-24">
           <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0"
-              key="etusivu"
-              href="/"
-            >
+            <Link key="etusivu" href="/">
               ETUSIVU{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
@@ -70,16 +79,63 @@ const Menu = ({
               />
             </Link>
           </li>
-          <li className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-4 px-4">
-            MITEN VOIN AUTTAA?
+          <li className="submenu" onClick={toggleMenu}>
+            <Link key="vastuullisuusviestinta" href="/vastuullisuusviestinta">
+              VASTUULLISUUSVIESTINTÄ{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
           </li>
-          <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0 px-4"
-              key="vastuullisuusviestinta"
-              href="/vastuullisuusviestinta"
-            >
-              Vastuullisuusviestintä{" "}
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="sisallontuotanto" href="/sisallontuotanto">
+              Sisällöntuotanto{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
+          </li>
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="hakukoneoptimointi" href="/hakukoneoptimointi">
+              Hakukoneoptimointi{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
+          </li>
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="copywriting" href="/copywriting">
+              Copywriting{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
+          </li>
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="viestinnan-sparraus" href="/viestinnan-sparraus">
+              Viestinnän sparraus{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
+          </li>
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="oikoluku" href="/oikoluku">
+              Oikoluku{" "}
+              <FontAwesomeIcon
+                icon={faChevronDown}
+                className="icon align-middle -rotate-90 w-3"
+              />
+            </Link>
+          </li>
+          <li className="submenu-item" onClick={toggleMenu}>
+            <Link key="toimittajan-tyo" href="/toimittajan-tyo">
+              Toimittajan työ{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className="icon align-middle -rotate-90 w-3"
@@ -87,31 +143,8 @@ const Menu = ({
             </Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0 px-4"
-              key="viestinnan-palvelut"
-              href="/viestinnan-palvelut"
-            >
-              Muut viestinnän palvelut{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="icon align-middle -rotate-90 w-3"
-              />
-            </Link>
-          </li>
-          <li
-            className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-4 px-4"
-            key="portfolio"
-          >
-            TUTUSTUTAAN
-          </li>
-          <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0 px-4"
-              key="vasuullisuus"
-              href="/vastuullisuus"
-            >
-              Vastuullisuudesta{" "}
+            <Link key="vastuullisuus" href="/vastuullisuus">
+              VASTUULLISUUS{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
                 className="icon align-middle -rotate-90 w-3"
@@ -119,24 +152,7 @@ const Menu = ({
             </Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-0 px-4"
-              key="sananen-minusta"
-              href="/minusta"
-            >
-              Sananen minusta{" "}
-              <FontAwesomeIcon
-                icon={faChevronDown}
-                className="icon align-middle -rotate-90 w-3"
-              />
-            </Link>
-          </li>
-          <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-4"
-              key="portfolio"
-              href="/portfolio"
-            >
+            <Link key="portfolio" href="/portfolio">
               PORTFOLIO{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
@@ -145,11 +161,7 @@ const Menu = ({
             </Link>
           </li>
           <li onClick={toggleMenu}>
-            <Link
-              className="lg:block text-gray-100 text-xl lg:text-2xl md:inline-block mt-4"
-              key="yhdeydenotto"
-              href="/#yhteydenotto"
-            >
+            <Link key="yhdeydenotto" href="/#yhteydenotto">
               OTA YHTEYTTÄ{" "}
               <FontAwesomeIcon
                 icon={faChevronDown}
@@ -174,11 +186,11 @@ const Menu = ({
         <header className="w-full h-16 flex justify-between bg-orange drop-shadow-lg relative z-10">
           <a href="/">
             <Image
-              src={"/logo-placeholder.png"}
+              src="/murrosmedia-logo.png"
               alt="logo"
-              width="144"
-              height="74"
-              className="h-full"
+              width="110"
+              height="56"
+              className="mx-2 my-1"
               priority
             />
           </a>
@@ -203,111 +215,107 @@ const Menu = ({
       </div>
       <div className="hidden md:block">
         <header className="bg-orange">
-          <div className="flex flex-wrap items-center justify-evenly max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-evenly max-w-5xl mx-auto">
             <nav className={`block flex items-center w-auto h-32`}>
-              <Link
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 ${isCurrentPage(
-                  ""
-                )}`}
-                key="etusivu"
-                href="/"
-              >
-                ETUSIVU
-              </Link>
-              <div
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline select-menu ${
-                  isServicesMenuVisible ? "active" : ""
-                }`}
-                onClick={() => {
-                  setIsServicesMenuVisible(!isServicesMenuVisible);
-                }}
-              >
-                <div className="text-gray-100">
-                  <span className="cursor-pointer whitespace-nowrap">
-                    MITEN VOIN AUTTAA?{" "}
-                    <FontAwesomeIcon
-                      icon={faChevronDown}
-                      className={`icon align-middle ${
-                        isServicesMenuVisible ? "rotate-180" : ""
-                      }`}
-                    />
-                    <i className="bx bx-chevron-down"></i>
-                  </span>
-                </div>
-
-                <ul className="options hidden ">
-                  <li className="option">
-                    <Link
-                      href="/vastuullisuusviestinta"
-                      className={`option-text ${isCurrentPage(
-                        "vastuullisuusviestinta"
-                      )}`}
-                    >
-                      Vastuullisuusviestintä
-                    </Link>
-                  </li>
-                  <li className="option">
-                    <Link
-                      href="/viestinnan-palvelut"
-                      className={`option-text ${isCurrentPage(
-                        "viestinnan-palvelut"
-                      )}`}
-                    >
-                      Muut viestinnän palvelut
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline select-menu ${
-                  isAboutMenuVisible ? "active" : ""
-                }`}
-                onClick={() => {
-                  setIsAboutMenuVisible(!isAboutMenuVisible);
-                }}
-              >
-                <div className="text-gray-100">
-                  <span className="cursor-pointer whitespace-nowrap">
-                    TUTUSTUTAAN{" "}
-                    <FontAwesomeIcon
-                      icon={faChevronDown}
-                      className={`icon align-middle ${
-                        isAboutMenuVisible ? "rotate-180" : ""
-                      }`}
-                    />
-                  </span>
-                  <i className="bx bx-chevron-down"></i>
-                </div>
-
-                <ul className="options hidden ">
-                  <li className="option">
-                    <Link href="/vastuullisuus" className="option-text">
-                      Vastuullisuudesta
-                    </Link>
-                  </li>
-                  <li className="option">
-                    <Link href="/minusta" className="option-text">
-                      Sananen minusta
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <Link
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 ${isCurrentPage(
-                  "portfolio"
-                )}`}
-                key="portfolio"
-                href="/portfolio"
-              >
-                PORTFOLIO
-              </Link>
-              <Link
-                className={`lg:block text-gray-100 text-lg lg:text-2xl md:inline-block md:mt-0 px-4 no-underline whitespace-nowrap`}
-                key="yhdeydenotto"
-                href="/#yhteydenotto"
-              >
-                OTA YHTEYTTÄ
-              </Link>
+              <ul>
+                <li>
+                  <Link className={isCurrentPage("")} key="etusivu" href="/">
+                    ETUSIVU
+                  </Link>
+                </li>
+                <li>
+                  <span>VIESTINTÄPALVELUT ▾</span>
+                  <ul className="dropdown shadow-lg">
+                    <li>
+                      <Link
+                        href="/vastuullisuusviestinta"
+                        className={isCurrentPage("vastuullisuusviestinta")}
+                      >
+                        VASTUULLISUUSVIESTINTÄ
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/sisallontuotanto"
+                        className={`sub-item ${isCurrentPage(
+                          "sisallontuotanto"
+                        )}`}
+                      >
+                        <SubmenuItem label="Sisällöntuotanto" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/hakukoneoptimointi"
+                        className={`sub-item ${isCurrentPage(
+                          "hakukoneoptimointi"
+                        )}`}
+                      >
+                        <SubmenuItem label="Hakukoneoptimointi" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/copywriting"
+                        className={`sub-item ${isCurrentPage("copywriting")}`}
+                      >
+                        <SubmenuItem label="Copywriting" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/viestinnan-sparraus"
+                        className={`sub-item ${isCurrentPage(
+                          "viestinnan-sparraus"
+                        )}`}
+                      >
+                        <SubmenuItem label="Viestinnän sparraus" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/oikoluku"
+                        className={`sub-item ${isCurrentPage("oikoluku")}`}
+                      >
+                        <SubmenuItem label="Oikoluku" />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/toimittajan-tyo"
+                        className={`sub-item ${isCurrentPage(
+                          "toimittajan-tyo"
+                        )}`}
+                      >
+                        <SubmenuItem label="Toimittajan työ" />
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link
+                    className={isCurrentPage("vastuullisuus")}
+                    key="vastuullisuus"
+                    href="/vastuullisuus"
+                  >
+                    VASTUULLISUUS
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    className={isCurrentPage("portfolio")}
+                    key="portfolio"
+                    href="/portfolio"
+                  >
+                    PORTFOLIO
+                  </Link>
+                </li>
+                <li>
+                  <Link key="ota-yhteytta" href="/#yhteydenotto">
+                    OTA YHTEYTTÄ
+                  </Link>
+                </li>
+              </ul>
             </nav>
           </div>
         </header>
