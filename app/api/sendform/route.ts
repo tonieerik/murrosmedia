@@ -17,13 +17,14 @@ export const POST = async (req: Request) => {
         status: 500,
       });
     }
-    const resend = new Resend(apiKey);
 
+    const resend = new Resend(apiKey);
     const payload = await req.json();
 
     if (!payload?.email) {
       return new Response("Email is required", { status: 422 });
     }
+
     if (!payload?.message) {
       return new Response("Message is required", { status: 422 });
     }
