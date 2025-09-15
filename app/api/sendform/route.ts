@@ -1,7 +1,5 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "");
-
 function htmlEntities(str: string) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -12,13 +10,21 @@ function htmlEntities(str: string) {
 
 export const POST = async (req: Request) => {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      return new Response("Server not configured (RESEND_API_KEY missing)", {
+        status: 500,
+      });
+    }
+    const resend = new Resend(apiKey);
+
     const payload = await req.json();
 
     if (!payload?.email) {
       return new Response("Email is required", { status: 422 });
     }
-
-    if (!payload.message) {
+    if (!payload?.message) {
       return new Response("Message is required", { status: 422 });
     }
 
