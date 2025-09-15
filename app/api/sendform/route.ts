@@ -1,6 +1,6 @@
-import sgMail from "@sendgrid/mail";
+import { Resend } from "resend";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
+const resend = new Resend(process.env.RESEND_API_KEY || "");
 
 function htmlEntities(str: string) {
   return String(str)
@@ -15,40 +15,44 @@ export const POST = async (req: Request) => {
     const payload = await req.json();
 
     if (!payload?.email) {
-      return new Response("Email is required", {
-        status: 422,
-      });
+      return new Response("Email is required", { status: 422 });
     }
 
     if (!payload.message) {
-      return new Response("Message is required", {
-        status: 422,
+      return new Response("Message is required", { status: 422 });
+    }
+
+    const text = `Nimi: ${htmlEntities(
+      payload?.name
+    )}, Sähköposti: ${htmlEntities(payload?.email)}, Puhelin: ${htmlEntities(
+      payload?.phone
+    )}, Viesti: ${htmlEntities(payload?.message)}`;
+
+    const html = `<strong>Nimi:</strong> ${htmlEntities(
+      payload?.name
+    )}<br /><strong>Sähköposti:</strong> ${htmlEntities(
+      payload?.email
+    )}<br /><strong>Puhelin:</strong> ${htmlEntities(
+      payload?.phone
+    )}<br /><strong>Viesti:</strong><br />${htmlEntities(payload?.message)}`;
+
+    const { error } = await resend.emails.send({
+      to: "nelli@murrosmedia.fi",
+      from: "Murrosmedia <nelli@murrosmedia.fi>",
+      replyTo: htmlEntities(payload?.email),
+      subject: "Murrosmedia: viesti verkkosivuilta",
+      text,
+      html,
+    });
+
+    if (error) {
+      return new Response(JSON.stringify({ message: "Send failed" }), {
+        status: 500,
       });
     }
 
-    const msg = {
-      to: "nelli@murrosmedia.fi",
-      from: "Murrosmedia <nelli@murrosmedia.fi>", // Verified sender
-      reply_to: htmlEntities(payload?.email),
-      subject: "Murrosmedia: viesti verkkosivuilta",
-      text: `Nimi: ${htmlEntities(payload?.name)}, Sähköposti: ${htmlEntities(
-        payload?.email
-      )}, Puhelin: ${htmlEntities(payload?.phone)}, Viesti: ${htmlEntities(
-        payload?.message
-      )}`,
-      html: `<strong>Nimi:</strong> ${htmlEntities(
-        payload?.name
-      )}<br /><strong>Sähköposti:</strong> ${htmlEntities(
-        payload?.email
-      )}<br /><strong>Puhelin:</strong> ${htmlEntities(
-        payload?.phone
-      )}<br /><strong>Viesti:</strong><br />${htmlEntities(payload?.message)}`,
-    };
-
-    await sgMail.send(msg);
-
     return new Response(JSON.stringify({ message: "OK" }), { status: 200 });
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ message: "Send failed" }), {
       status: 500,
     });
